@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<body>
+    
+    <form onsubmit="return false">
+    <table CELLPADDING="10">
+    <tr>
+    <td>Name:</td>
+    <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+    <td> Login name:</td>
+    <td><input type="text" id="login"></td>
+    </tr>
+    <tr>
+    <td>Password:</td>
+    <td><input type="text" id="pass"></td>
+    </tr>
+    <tr>
+    <td>Confirm Password:</td>
+    <td><input type="text" id="c_pass"></td>
+    </tr>
+    <tr>
+    <td>Sex:</td>
+    <td><input type="radio" id="male">Male<br>
+        <input type="radio" id="female">Female</td>
+    </tr>
+    <tr>
+    <td>Location:</td>
+    <td><select><option value="India">India</option>
+        <option value="Japan">Japan</option>
+        </select></td></td>
+    </tr>
+    <td>Phone no:</td>
+    <td><input type="text" id="pno"></td>
+        
+    </tr>
+     <tr>
+    <td></td>
+    <td><button onclick="validate()">Click me</button></td>
+    </tr>
+    </table>
+   
+    </form>
+<p id = "invalidemail"></p><br>
+<p id = "invalidname"></p><br>
+<p id = "invalidphone"></p><br>
+
+<script type="text/javascript">
+    
+
+
+function validate()
+{   
+    var name   =  document.getElementById("name").value;
+    var pno    =  document.getElementById("pno").value;
+    var login  =  document.getElementById("login").value;
+    var atpos  =  login.indexOf("@");
+    var dotpos =  login.lastIndexOf(".");
+    
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=login.length) 
+        document.getElementById("invalidemail").innerHTML = "Invalid login name!";
+        
+    var test = name.match(/\d/);
+        if(test != null)
+            document.getElementById("invalidname").innerHTML = "Invalid name! Only a-z or A-Z allowed";
+    
+    var phone = pno.match(/\d+/g);
+        if(  phone == null || pno.length!=10 )
+        {
+            document.getElementById("invalidphone").innerHTML = "Invalid number";
+            console.log(phone);
+        }
+            
+}
+</script>
+
+
+</body>
+</html>

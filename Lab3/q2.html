@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 3 Q2 : Pig Latin</title>
+</head>
+<body>
+<textarea id="input"></textarea><br>
+<button onclick="convert()">Convert to Pig Latin</button>
+<div id="output"></div>
+<script type="text/javascript">
+	var input=document.getElementById('input');
+	var output=document.getElementById('output');
+
+	function convert()
+	{
+		var words=input.value.split(" ");
+		for(var i=0; i<words.length; i++)
+			words[i]=pigLatin(words[i]);
+		var string=words.join(" ");
+		output.innerHTML+="<br>"+string;
+	}
+
+	function pigLatin(word)
+	{
+		var output=word.substring(1);
+		output+=word.charAt(0)+"ay";
+		return output;
+	}
+</script>
+</body>
+</html>

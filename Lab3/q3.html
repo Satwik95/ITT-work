@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<input type="text" name="" id="input"> 
+<button onclick="extract()">Extract</button>
+<br><br>
+Area Code: <input type="text" id="areaCode"><br>
+Phone Number: <input type="text" id="phoneNumber">
+<script type="text/javascript">
+	var input=document.getElementById('input');
+	var areaCode=document.getElementById('areaCode');
+	var phoneNumber=document.getElementById('phoneNumber');
+	function extract()
+	{
+		var tokens=input.value.split(/[() -]/);
+		areaCode.value=tokens[1];  
+		phoneNumber.value=tokens[2]+tokens[3];
+	}
+</script>
+</body>
+</html>

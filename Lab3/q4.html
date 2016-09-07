@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 3 Q4 : 3 letter permutations</title>
+</head>
+<body>
+<input type="text" name="" id="input"> 
+<button onclick="doPermute()">All 3 letter words</button>
+<br><br>
+<textarea id="outputArea"></textarea>
+<script type="text/javascript">
+	var input=document.getElementById('input');
+	var outputArea=document.getElementById('outputArea');
+	var inputString="";
+	function doPermute()
+	{
+		inputString=input.value;
+		combinations(0,"");
+		outputArea.value=outputArea.value.substring(1); //remove leading new line
+	}
+
+	function combinations(index, output)
+	{
+		if(output.length==3)
+		{
+			permute3chars(output);
+			return;
+		}
+		if(index>=inputString.length)
+			return;
+		combinations(index+1,output+inputString.charAt(index));
+		combinations(index+1,output);
+	}
+
+	function permute3chars(input)
+	{
+		var i=input.charAt(0);
+		var j=input.charAt(1);
+		var k=input.charAt(2);
+		appendOutput(i+j+k);
+		appendOutput(i+k+j);
+
+		appendOutput(j+i+k);
+		appendOutput(j+k+i);
+
+		appendOutput(k+i+j);
+		appendOutput(k+j+i);
+	}
+
+	function appendOutput(word)
+	{
+		outputArea.value=outputArea.value+"\n"+word;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lab4 q1(b)</title>
+</head>
+<body>
+	<table id="squares"></table>
+    <button onclick="squares()">Squares</button>
+	<script type="text/javascript">
+	
+		function squares()
+		{
+			var n=input();
+			var table=document.getElementById('squares');
+			table.innerHTML="";
+			var alert="<table>";
+			for(var i=1; i<=n; i++)
+			{
+				var output="<tr><td>"+i+"</td><td>"+i*i+"</td></tr>";
+				table.innerHTML+=output;
+				alert+=output;
+			}
+			alert+="</table>";
+			window.alert(alert);
+		}
+		function input()
+		{
+			var input=prompt("Enter a number");
+			return Number(input);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>lab4 q1(a)</title>
+    <script type="text/javascript">
+	var n = prompt("Enter a number");
+	
+	function fibsum(n)
+	{if (n <= 0)
+       return 0;
+ 
+    var fibo = new Array(n);
+    fibo[0] = 0, fibo[1] = 1;
+    var sum = fibo[0] + fibo[1];
+    for (var i=2; i<=n; i++)
+    {
+        fibo[i] = fibo[i-1]+fibo[i-2];
+        sum += fibo[i];
+    }
+    return sum;
+	}
+	
+	var fibo = fibsum(n);
+	
+	alert("The fibonacci sum is" + fibo)
+    
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

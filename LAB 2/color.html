@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>yo</title>
+<script>
+function bgChange(bg) {
+    document.body.style.background = bg;
+}
+</script>
+</head>
+
+<body>
+
+<h2>Change background color</h2>
+<p>Mouse over the text!</p>
+
+<ul>
+  
+    <li onmouseover="bgChange('red')"
+        onmouseout="bgChange('transparent')">
+        Red
+    </li>
+    <li onmouseover="bgChange('blue')"
+        onmouseout="bgChange('transparent')">
+        Blue
+    </li>
+    <li onmouseover="bgChange('green')"
+        onmouseout="bgChange('transparent')">
+        Green
+    </li>
+    <li onmouseover="bgChange('aqua')"
+        onmouseout="bgChange('transparent')">
+        Aqua
+    </li>
+    
+  
+</ul>
+</body>
+</html>

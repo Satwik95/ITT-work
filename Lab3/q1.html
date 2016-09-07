@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 3 Q 1</title>
+</head>
+<body>
+<div id="text">Growing text</div>
+<script type="text/javascript">
+function annimate()
+{
+	var element=document.getElementById('text');
+	var grow = true;
+	var text = "TEXT-GROWING"
+	var color = 'red';
+	var fontSize = 14;
+
+	if(fontSize>=50)
+	{	
+		grow = false;
+		color = "blue";
+		text = "Shrinking Text";
+		
+	}
+	else if(fontSize<5)
+	{
+		grow = true;
+		color = "red";
+		text = "TEXT-GROWING";
+
+	}
+	var delta = 2;
+	if(grow)
+		delta = 2;
+	else 
+		delta = -2;
+
+		element.style.color=color;
+		element.style.fontSize=fontSize+"px";
+		element.innerHTML=text;
+
+	setInterval(annimate(),100);
+}
+</script>
+</body>
+</html>

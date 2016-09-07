@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="stylel.css">
+	<script type="text/javascript">
+
+		function ContentDown(d)
+			{
+			var obj = document.getElementById(d);
+			var currentPosition = parseInt(obj.style.top)
+			var amountToMove = 30
+
+			obj.style.top = currentPosition+amountToMove+"pt";
+			}
+
+	</script>
+</head>
+ 
+<body  class="body">
+       <div id="para1">
+           <p id = "p1">Yo yo</p>
+       </div>
+    
+    <div id="para2">
+           <p id = "p2">yo yo returns</p>
+       </div>
+    
+    <div id="para3">
+           <p id = "p3">yo yo returns</p>
+       </div>
+    
+       
+  <!----    <div id="movingDiv" style="position:absolute; left:100pt; top:10pt; border:1px black outset; width:160px; text-align:center; background-color:white; font-weight:bold;">Moving Div</div>
+      
+      <div style="position:absolute; top:200; left:20"><a href="javascript:ContentDown('movingDiv')">MOVE BUTTON</a></div>--->
+    
+</body>
+</html>
